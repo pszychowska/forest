@@ -1,0 +1,932 @@
+@font-face {
+    font-family: 'Poppins';
+    font-display: fallback;
+    src: url('/fonts/Poppins-Bold.woff2') format('woff2'),
+        url('/fonts/Poppins-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-display: fallback;
+    src: url('/fonts/Poppins-Regular.woff2') format('woff2'),
+        url('/fonts/Poppins-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* OGÓLNE */
+
+body {
+    color: rgb(205, 214, 205);
+    background-color: rgb(53, 51, 63);
+    font-family: 'Poppins', Arial, sans-serif;
+
+}
+
+h1 {
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    margin: 0;
+    padding: 2%;
+    background-color: rgba(53, 51, 63, 0.7);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+
+}
+
+h2 {
+    margin-left: 2%;
+    padding: 2%;
+    font-size: 30px;
+
+}
+
+h3 {
+    margin-left: 2%;
+    padding: 2%;
+    font-size: 18px;
+}
+
+h4 {
+
+    padding: 2%;
+    font-size: 16px;
+}
+
+p {
+    margin-left: 2%;
+    margin-bottom: 5%;
+    padding: 2%;
+    font-size: 12px;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+button {
+    display: block;
+    margin: 2%;
+    padding: 2%;
+    color: rgb(205, 214, 205);
+    font-family: 'Poppins', arial, sans-serif;
+    font-weight: bold;
+    background-color: transparent;
+    border: 1px solid rgb(205, 214, 205);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 3;
+    text-transform: lowercase;
+    cursor: pointer;
+}
+
+button:hover {
+    color: white;
+    background-color: rgb(149, 166, 124);
+}
+
+@media (min-width: 640px) {
+    h1 {
+        font-size: 60px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+@media (min-width:768px) {
+
+    h1 {
+        font-size: 70px;
+    }
+
+    h2 {
+        font-size: 44px;
+    }
+
+    h3 {
+        font-size: 26px
+    }
+
+    h4 {
+        font-size: 22px
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 22px;
+    }
+}
+
+@media (min-width:1024px) {
+    h1 {
+        font-size: 90px;
+    }
+
+    h2 {
+        font-size: 50px;
+    }
+
+    h3 {
+        font-size: 30px
+    }
+
+    h4 {
+        font-size: 26px
+    }
+
+    p {
+        font-size: 24px;
+    }
+}
+
+@media (min-width:1280px) {
+
+    h1 {
+        font-size: 100px;
+    }
+
+    h2 {
+        font-size: 56px;
+    }
+
+    h3 {
+        font-size: 34px
+    }
+
+    h4 {
+        font-size: 32px
+    }
+
+    p {
+        font-size: 28px;
+    }
+
+    button {
+        font-size: 26px;
+    }
+}
+
+@media (min-width:1600px) {
+
+    h1 {
+        font-size: 120px;
+    }
+
+    h2 {
+        font-size: 62px;
+    }
+
+    h3 {
+        font-size: 38px
+    }
+
+    h4 {
+        font-size: 36px
+    }
+
+    p {
+        font-size: 32px;
+    }
+}
+
+/* HEADER */
+
+header {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url("/images/forest_small.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+.navIcon {
+    position: fixed;
+    color: rgb(205, 214, 205);
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    z-index: 1;
+    animation: rotate 3s linear infinite;
+}
+
+.navIcon:hover {
+    color: rgb(149, 166, 124);
+    animation: none;
+}
+
+.mobileIcon {
+    top: 5%;
+    right: 5%;
+
+}
+
+.mobileNav ul {
+    position: fixed;
+    top: 15%;
+    right: -50%;
+    height: 270px;
+    width: 150px;
+    margin: 2%;
+    padding-left: 5%;
+    list-style: none;
+    background-color: rgba(53, 51, 63, 0.7);
+}
+
+.mobileNav a {
+    display: block;
+    width: 100%;
+    padding: 5%;
+    color: rgb(205, 214, 205);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: lowercase;
+    text-align: right;
+    line-height: 2;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.mobileNav li:hover a {
+    font-size: 22px;
+}
+
+.showMobileNav {
+    animation: showMobileMenu 0.3s linear both;
+}
+
+.landscapeNav {
+    display: none;
+}
+
+@keyframes rotate {
+    0% {
+        transform: none;
+    }
+
+    50% {
+        transform: rotateY(180deg);
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+@keyframes showMobileMenu {
+    0% {
+        right: -50%;
+    }
+
+    100% {
+        right: 0%;
+    }
+}
+
+@keyframes showLandscapeMenu {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 5%;
+    }
+}
+
+@media (orientation: landscape) {
+    .mobileNav {
+        display: none;
+    }
+
+    .landscapeNav {
+        display: block;
+    }
+
+    .landscapeIcon {
+        top: 5%;
+        left: 5%;
+    }
+
+    .landscapeNav ul {
+        display: flex;
+        position: fixed;
+        top: 5%;
+        left: -100%;
+        height: 50px;
+        width: 90%;
+        list-style: none;
+        background-color: rgba(53, 51, 63, 0.7);
+    }
+
+    .landscapeNav li {
+        flex-basis: 20%;
+    }
+
+    .landscapeNav a {
+        display: block;
+        width: 100%;
+        padding: 5%;
+        color: rgb(205, 214, 205);
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: lowercase;
+        text-align: center;
+        line-height: 2;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .landscapeNav li:hover a {
+        font-size: 20px;
+    }
+
+    .showLandscapeNav {
+        animation: showLandscapeMenu 0.3s linear both;
+    }
+}
+
+@media (min-width: 640px) {
+
+    .mobileNav ul {
+        height: 320px;
+    }
+
+    .mobileNav a {
+        font-size: 22px;
+    }
+
+    .navIcon {
+        font-size: 60px;
+    }
+
+    .mobileNav li:hover a {
+        font-size: 28px;
+    }
+
+    .landscapeNav ul {
+        height: 60px;
+    }
+
+    .landscapeNav a {
+        font-size: 22px;
+        line-height: 60px;
+    }
+
+    .landscapeNav li:hover a {
+        font-size: 28px;
+    }
+}
+
+
+@media (min-width: 768px) {
+    header {
+        background-image: url("images/forest_medium.jpg");
+    }
+
+    .mobileNav ul {
+        width: 180px;
+        height: 380px;
+    }
+
+    .mobileNav a {
+        font-size: 26px;
+    }
+
+    .navIcon {
+        font-size: 70px;
+    }
+
+    .mobileNav li:hover a {
+        font-size: 32px;
+    }
+
+    .landscapeNav ul {
+        height: 70px;
+    }
+
+    .landscapeNav a {
+        font-size: 26px;
+        line-height: 70px;
+    }
+
+    .landscapeNav li:hover a {
+        font-size: 32px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    .mobileNav ul {
+        width: 180px;
+        height: 420px;
+    }
+
+    .mobileNav a {
+        font-size: 30px;
+    }
+
+    .navIcon {
+        font-size: 80px;
+    }
+
+    .mobileNav li:hover a {
+        font-size: 36px;
+    }
+
+    .landscapeNav ul {
+        height: 80px;
+    }
+
+    .landscapeNav a {
+        font-size: 30px;
+        line-height: 80px;
+    }
+
+    .landscapeNav li:hover a {
+        font-size: 36px;
+    }
+}
+
+@media (min-width: 1280px) {
+    header {
+        background-image: url("/images/forest_large.jpg");
+    }
+
+    .landscapeNav ul {
+        height: 80px;
+    }
+
+    .landscapeNav a {
+        font-size: 32px;
+        line-height: 80px;
+    }
+
+    .navIcon {
+        font-size: 80px;
+    }
+
+    .landscapeNav li:hover a {
+        font-size: 38px;
+    }
+}
+
+@media (min-width: 1600px) {
+
+    .navIcon {
+        font-size: 80px;
+    }
+
+    .landscapeNav ul {
+        height: 80px;
+    }
+
+    .landscapeNav a {
+        font-size: 34px;
+    }
+
+    .landscapeNav li:hover a {
+        font-size: 40px;
+    }
+}
+
+/* SEKCJA 1 LASY */
+
+.forest {
+    padding-bottom: 2%;
+    background-color: rgb(70, 88, 88);
+}
+
+.forest img {
+    width: 100%;
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+    .forest img {
+        float: left;
+        width: 50%;
+        padding: 0 2% 2% 4%;
+    }
+
+    .forest h2 {
+        padding-top: 0;
+    }
+
+    .forest p {
+        padding: 0;
+    }
+}
+
+/* SEKCJA 2 OPINIE */
+
+div.review:nth-of-type(2) {
+    margin-right: 10%;
+    border-top: solid 1px rgb(205, 214, 205);
+    border-bottom: solid 1px rgb(205, 214, 205);
+}
+
+.sign {
+    display: flex;
+    justify-items: center;
+    padding-bottom: 2%;
+}
+
+.sign img {
+    width: 50px;
+    height: 50px;
+    margin-left: 4%;
+    border-radius: 50%;
+    border: solid 2px rgb(205, 214, 205);
+    animation: rotate 3s linear infinite;
+}
+
+@media (min-width: 640px) {
+    .sign img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+    div.reviews {
+        display: flex;
+        padding: 2%;
+    }
+
+    div.review {
+        flex-basis: 33.33%;
+        margin-bottom: 2%;
+    }
+
+    div.review:nth-of-type(2) {
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+
+    .review p {
+        margin-right: 5%;
+        margin-bottom: 15%;
+    }
+
+}
+
+/* SEKCJA 3 ZAGADKA */
+
+.riddle {
+    margin-bottom: 5%;
+    background-color: rgb(70, 88, 88);
+
+}
+
+div.animal {
+    width: 100%;
+    height: 40vh;
+    background-color: rgb(53, 51, 63);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    border: 1px solid rgb(53, 51, 63);
+    transition: 0.5s;
+}
+
+div.animal:hover {
+    opacity: 1;
+    background-size: 150%;
+}
+
+div.animal:first-of-type {
+    background-image: url("/images/3_bear.jpg");
+}
+
+div.animal:nth-of-type(2) {
+    background-image: url("/images/3_deer.jpg");
+}
+
+div.animal:nth-of-type(3) {
+    background-image: url("/images/3_whale.jpg");
+}
+
+div.animal:last-of-type {
+    background-image: url("/images/3_raccoon.jpg");
+}
+
+@media (orientation: landscape) {
+    div.animals {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    div.animal {
+        flex-basis: 50%;
+        height: 50vh;
+    }
+}
+
+/* SEKCJA 4 GRA KAMIEŃ PAPIER NOŻYCZKI */
+
+section.game {
+    margin-bottom: 5%;
+    max-width: 1280px;
+    margin: 0 auto 5%;
+}
+
+div.select {
+    flex-basis: 30%;
+    margin-bottom: 2%;
+}
+
+.select img {
+    box-sizing: border-box;
+    width: 100%;
+    cursor: pointer;
+}
+
+div.results {
+    flex-basis: 60%;
+    margin-bottom: 2%;
+}
+
+.game p {
+    margin: 0;
+    padding: 0 2%;
+}
+
+.gameButtons {
+    display: flex;
+}
+
+button.start,
+button.reset {
+    flex-basis: 40%;
+}
+
+button.reset:hover {
+    background-color: #BF5B21;
+
+}
+
+@media (min-width: 640px) {
+    div.game {
+        display: flex;
+    }
+
+    div.rightSide {
+        flex-basis: 70%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 2%;
+    }
+
+    div.select {
+        flex-basis: 20%;
+    }
+
+    div.results {
+        flex-basis: 60%;
+        margin-bottom: 2%;
+    }
+}
+
+/* SEKCJA 5 KONTAKT */
+
+.contacts {
+    margin-bottom: 5%;
+    background-color: rgb(70, 88, 88);
+}
+
+.contact input,
+.contact textarea,
+.contact button {
+    width: 92%;
+    margin: 2% 4%;
+    border-radius: 5px;
+    font-family: 'Poppins', arial, sans-serif;
+    font-size: 14px;
+    text-indent: 4%;
+    line-height: 36px;
+    text-transform: lowercase;
+}
+
+.contact textarea {
+    height: 120px;
+}
+
+
+
+.contact a {
+    display: block;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-decoration: none;
+    text-align: left;
+    color: rgb(205, 214, 205);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.contact i {
+    width: 10%;
+    font-size: 20px;
+    text-align: center;
+}
+
+.contact a:hover {
+    color: white;
+}
+
+.contact span {
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+
+    .contact span,
+    .contact i {
+        font-size: 16px;
+    }
+}
+
+@media (min-width:768px) {
+
+    .contact span,
+    .contact i {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+    .contact {
+        display: flex;
+    }
+
+    form {
+        flex-basis: 60%;
+        margin-left: 2%;
+    }
+
+    div.phone {
+        flex-basis: 40%;
+    }
+
+    .contact input,
+    .contact textarea,
+    .contact button {
+        width: 80%;
+        font-size: 18px;
+    }
+
+    .contact textarea {
+        height: 220px;
+    }
+}
+
+@media (min-width:1024px) {
+
+    .contact span,
+    .contact i {
+        font-size: 24px;
+    }
+}
+
+@media (min-width:1280px) {
+
+    .contact span,
+    .contact i {
+        font-size: 28px;
+    }
+}
+
+@media (min-width:1600px) {
+
+    .contact span,
+    .contact i {
+        font-size: 32px;
+    }
+
+    .contact input,
+    .contact textarea,
+    .contact button {
+        font-size: 22px;
+    }
+}
+
+/* FOOTER */
+
+footer p {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+footer i {
+    color: rgb(205, 214, 205);
+}
+
+/* MODAL */
+
+.wrongAnswear-wrap,
+.rightAnswear-wrap {
+    display: none;
+}
+
+.wrongAnswear-wrap.active,
+.rightAnswear-wrap.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.wrongAnswear-wrap.active .modal,
+.rightAnswear-wrap.active .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(53, 51, 63);
+}
+
+.rightAnswear {
+    background-image: url("/images/modal_ok.jpg");
+}
+
+.wrongAnswear {
+    background-image: url("/images/modal_wrong.jpg");
+}
+
+.modal {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.modal p {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(53, 51, 63);
+    line-height: 3;
+    text-align: center;
+}
+
+.modal span {
+    position: absolute;
+    top: 1%;
+    right: 2%;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.blur {
+    filter: blur(5px);
+}
+
+@media (orientation: portrait) {
+
+    .wrongAnswear-wrap.active .modal,
+    .rightAnswear-wrap.active .modal {
+        width: 80%;
+        height: 70%;
+    }
+
+    .rightAnswear {
+        background-image: url("/images/modal_ok_portrait.jpg");
+    }
+
+    .wrongAnswear {
+        background-image: url("/images/modal_wrong_portrait.jpg");
+    }
+
+}

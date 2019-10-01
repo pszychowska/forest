@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <title>Leśny las</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header" id="header">
+        <h1>Leśny las</h1>
+        <!-- menu w pionie -->
+        <nav class="mobileNav">
+            <ul class="mobileList">
+                <li><i class="navIcon mobileIcon fas fa-tree"></i></li>
+                <li><a class="homeNav" href="#">Home</a></li>
+                <li><a class="forestNav" href="#">Lasy</a></li>
+                <li><a class="reviewsNav" href="#">Opinie</a></li>
+                <li><a class="riddleNav" href="#">Zagadka</a></li>
+                <li><a class="gameNav" href="#">Gra</a></li>
+                <li><a class="contactNav" href="#">Kontakt</a></li>
+            </ul>
+        </nav>
+        <!-- menu w poziomie -->
+        <nav class="landscapeNav">
+            <ul class="landscapeList">
+                <li><img class='navIcon landscapeIcon' src="/icons/tree.svg"></li>
+                <li><a class="homeNav" href="#">Home</a></li>
+                <li><a class="forestNav" href="#">Lasy</a></li>
+                <li><a class="reviewsNav" href="#">Opinie</a></li>
+                <li><a class="riddleNav" href="#">Zagadka</a></li>
+                <li><a class="gameNav" href="#">Gra</a></li>
+                <li><a class="contactNav" href="#">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- lasy -->
+        <section class="forest" id="forest">
+            <h2>Podział lasów:</h2>
+            <div class="clearfix">
+                <img src="/images/nice.jpg" alt="fajny las">
+                <h3>Fajny</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea sapiente architecto dicta officia
+                    excepturi nemo nihil quis quas?
+                </p>
+            </div>
+            <div class="clearfix">
+                <img src="/images/not_nice.jpg" alt="niefajny las">
+                <h3>Niefajny</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae minima id ducimus necessitatibus
+                    rerum
+                    est, ratione accusamus amet dolor tenetur repellat perspiciatis.</p>
+            </div>
+        </section>
+        <!-- opinie mieszkańców -->
+        <section class="reviews" id="reviews">
+            <h2>Opinie mieszkańców</h2>
+            <div class="reviews">
+                <div class="review">
+                    <h3>Całkiem spoko</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, et unde. Iure perferendis
+                        suscipit
+                        voluptatum animi distinctio inventore, nam dolor tenetur omnis praesentium consectetur
+                        doloribus
+                        totam maiores voluptatem dicta qui.</p>
+                    <div class="sign">
+                        <img src="/images/2_owl.jpg" alt="sowa">
+                        <p>Sowa - główny prezes zarządzający</p>
+                    </div>
+                </div>
+                <div class="review">
+                    <h3>Daje radę</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione modi sunt et aliquam, id
+                        reprehenderit quae laborum aliquid? Necessitatibus quasi laboriosam dignissimos
+                        quos accusamus architecto est corrupti atque.</p>
+                    <div class="sign">
+                        <img src="/images/2_squirrel.jpg" alt="wiewiórka">
+                        <p>Wiewiórka - ekspert ds. magazynowania zapasów</p>
+                    </div>
+                </div>
+                <div class="review">
+                    <h3>Dla mnie ok</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod sunt dicta neque quam natus
+                        laboriosam? Eveniet placeat fuga amet iure aliquam nobis officiis deserunt dolor sequi,
+                        pariatur
+                        impedit, consequuntur sint?</p>
+                    <div class="sign">
+                        <img src="/images/2_wolf.jpg" alt="wilk">
+                        <p>Wilk - lonely wolf</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- zagadka -->
+        <section class="riddle" id="riddle">
+            <h2>Czas na zagadkę!</h2>
+            <h3>Kliknij w zwierzę, które NIE mieszka w lesie!</h3>
+            <div class="animals">
+                <div class="animal wrong">
+                </div>
+                <div class="animal wrong">
+                </div>
+                <div class="animal right">
+                </div>
+                <div class="animal wrong">
+                </div>
+            </div>
+        </section>
+        <!-- GRA PAPIER KAMIEŃ NOŻYCZKI -->
+        <section class="game">
+            <h2>Gra kamień papier nożyczki</h2>
+            <h3>Wybierz:</h3>
+            <div class="game">
+                <div class="select">
+                    <img data-option="papier" src="/images/paper.jpg" alt="Papier">
+                    <img data-option="kamień" src="/images/rock.jpg" alt="Kamień">
+                    <img data-option="nożyczki" src="/images/scissor.jpg" alt="Nożyczki">
+                </div>
+                <div class="rightSide">
+                    <div class="gameButtons">
+                        <button class="start">Zagrajmy!</button>
+                        <button class="reset">Zeruj wyniki</button>
+                    </div>
+                    <div class="results">
+                        <div class="panel">
+                            <h4>Wyniki gry:</h4>
+                            <p>Twój wybór: <span data-summary="your-choice"></span></p>
+                            <p>Wybór komputera: <span data-summary="ai-choice"></span></p>
+                            <h4 class="winner">Zwycięzca gry: <span data-summary="winner"></span></h4>
+                        </div>
+
+                        <div class="panel">
+                            <h4>Aktualne wyniki:</h4>
+                            <p class="numbers">liczba gier: <span>0</span></p>
+                            <p class="wins">wygranych: <span>0</span></p>
+                            <p class="losses">przegranych: <span>0</span></p>
+                            <p class="draws">remisów: <span>0</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- kontakt -->
+        <section class="contacts" id="contacts">
+            <h2>Skontaktuj się z nami</h2>
+            <div class="contact">
+                <form>
+                    <input type="text" placeholder="Imię i nazwisko">
+                    <input type="text" placeholder="e-mail">
+                    <textarea placeholder="formularz jest tylko ostylowany, nie podpięty"></textarea>
+                    <button>Wyślij wiadomość</button>
+                </form>
+                <div class="phone">
+                    <a href="#"><i class="fab fa-facebook-f"></i>
+                        <span>Paulina Szychowska</span>
+                    </a>
+                    <a href="#"><i class="fas fa-mobile-alt"></i>
+                        <span>555 555 555</span>
+                    </a>
+                    <a href="#"><i class="far fa-envelope"></i>
+                        <span>yolo@yolo</span>
+                    </a>
+                </div>
+            </div>
+            <!-- modale -->
+            <section class="popup">
+                <div class="rightAnswear-wrap">
+                    <div class="rightAnswear modal">
+                        <p>Facetka z Przyrody byłaby dumna!</p>
+                        <span class="hide">X</span>
+                    </div>
+                </div>
+                <div class="wrongAnswear-wrap">
+                    <div class="wrongAnswear modal">
+                        <p>Chyba jednak nie...</p>
+                        <span class="hide2">X</span>
+                    </div>
+                </div>
+            </section>
+    </main>
+    <!-- stopka -->
+    <footer>
+        <p> <i class="far fa-copyright"></i> by Paulina Szychowska </p>
+    </footer>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+    <script src="game.js"></script>
+</body>
+
+</html>
